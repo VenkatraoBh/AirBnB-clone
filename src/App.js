@@ -1,17 +1,28 @@
 import "./App.css";
+import Footer from "./Footer";
+import Header from "./Header";
+import Home from "./Home";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
+
+import SearchPage from "./SearchPage";
 
 function App() {
   return (
-    //BEM
     <div className="App">
-      <h1>Hello venkat!</h1>
-      {/* Header */}
-
-      {/* Banner */}
-
-      {/* Cards */}
-
-      {/* Footer */}
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }
